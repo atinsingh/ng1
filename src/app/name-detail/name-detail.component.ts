@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IQuote } from '../models/quote.model';
 
 @Component({
@@ -8,30 +8,9 @@ import { IQuote } from '../models/quote.model';
 })
 export class NameDetailComponent implements OnInit {
 
-  quotes : IQuote [] = [{
-    description : 'The thermometer of success is merely the jealousy of the malcontents.',
-    author: 'John Doe',
-    show : false,
-    id: Math.floor(Math.random()*1000)
-  },
-  {
-    description : 'Learn Java & Angular Together for fun.',
-      author: 'John Doe',
-      show : false,
-      id: Math.floor(Math.random()*1000)
-  },
-  {
-    description : 'Today is myth and tomorrow is brigth.',
-    author: 'John Doe',
-    show : true,
-    id: Math.floor(Math.random()*1000)
-  }
-]
+  @Input() quote : IQuote
 
-  trackbyId(index,quote): number {
-    console.log(quote.id)
-    return quote.id;
-  }
+  
 
   constructor() { }
 
